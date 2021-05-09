@@ -1,38 +1,42 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import "../Sass/Form.sass";
 
 const Form = () => {
+  //have a hook to hold an array of objects
+  //object has currency, image, selected key, and amount
+  //if selected loop through array and set old
   return (
-    <Container className="justify-content-md-center">
-      <Row className="form-group">
-        <Col xs={12} md={6}>
-          <label for="amount">Amount</label>
+    <div className="wrapper text-center">
+      <div className="background">
+        <div className="input-group mb-3">
           <input
-            className="form-control"
             type="text"
-            id="amount"
-            value="Enter amount to be converted"
+            class="form-control"
+            value="Enter amount"
+            aria-label="Enter amount"
+            aria-describedby="button-addon2"
             onFocus={(e) => {
               e.target.value = "";
             }}
           />
-        </Col>
-        <Col xs={12} md={6}>
-          <label for="currency-type">Currency to convert from:</label>
-          <select
-            className="form-control"
-            id="currency-type"
-            v-model="selected"
-          >
-            <option>-- Please select a currency --</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </Col>
-      </Row>
-    </Container>
+          <div className="input-group-append">
+            <select className="custom-select">
+              <option selected>USD</option>
+              <option>EUR</option>
+              <option>GBP</option>
+              <option>CAD</option>
+              <option>ARS</option>
+              <option>AUD</option>
+              <option>IMR</option>
+              <option>PTE</option>
+              <option>JPY</option>
+              <option>RUB</option>
+              <option>CHF</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
