@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Sass/Form.sass'
-import SDK from '@uphold/uphold-sdk-javascript';
+import SDK from '@uphold/uphold-sdk-javascript'
 
 //add env file
 
@@ -11,21 +11,22 @@ const sdk = new SDK({
   });
 
 const Form = () => {
-  //have a hook to hold an array of objects
-  //object has currency, image, selected key, and amount
-  //if selected loop through array and set old
+  const [currencyOptions, setCurrencyOptions] = useState(['USD', 'EUR', 'GBP', 'CAD', 'ARS', 'AUD', 'IMR', 'PTE', 'JPY', 'RUB', 'CHF']);
+  const [selectedCurrency, setSelectedCurrency] = useState('USD');
+  const [amount, setAmount] = useState(0);
+  const [allCurrencyResults, setAllCurrencyResults] = useState([]);
+  const [filteredResults, setFilteredResults] = useState([])
+  //i need to find 10 currencies i can use with api
+  //need to figure out how to filter the results
+  //currentResults.filter()
+  //then loop currencyOptions inside filter
+  //if selected + option[i]
+  //then set final results
 
-
-  //fetch to an api on change of hook
-///first part of string is amount country --> second part is exhange rate
-//multiple gets for 10 countries
-//just grab the starting currency
-//then loop through and find 10 countries
-//display those to screen
   useEffect(()=>{
-    sdk.getTicker("EUR")
-    .then((data) =>   console.log(data))
-  }, [])
+    sdk.getTicker(selectedCurrency)
+    .then((data) =>   setAllCurrencyResults(data))
+  }, [selectedCurrency])
   return (
     <div className='wrapper text-center'>
       <div className='background'>
@@ -33,26 +34,17 @@ const Form = () => {
           <input
             type='text'
             className='form-control'
-            value='Enter amount'
+            placeholder='0'
             aria-label='Enter amount'
             aria-describedby='button-addon2'
             onFocus={(e) => {
               e.target.value = ''
             }}
+            onChange={e => setAmount(Number(e.target.value))}
           />
           <div className='input-group-append'>
-            <select className='custom-select'>
-              <option selected>USD</option>
-              <option>EUR</option>
-              <option>GBP</option>
-              <option>CAD</option>
-              <option>ARS</option>
-              <option>AUD</option>
-              <option>IMR</option>
-              <option>PTE</option>
-              <option>JPY</option>
-              <option>RUB</option>
-              <option>CHF</option>
+            <select className='custom-select' onChange={e => setSelectedCurrency(e.target.value)}>
+              {currencyOptions.map((option, idx)=> (<option value={option} key={idx}>{option}</option>))}
             </select>
           </div>
         </div>
