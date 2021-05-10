@@ -7,11 +7,13 @@ const Footer = () => {
   return (
     <footer>
       <div className='container'>
-        <div className='row mt-5'>
+        <div className='row mt-5' id='mobile-row2'>
           <hr />
           <br />
           <br />
-          <div className='col-lg-2 col-md-4 col-6 col-sm-6 mt-3'>
+        </div>
+        <div className='row mt-4' id='mobile-row'>
+          <div className='col-lg-2 col-md-4 col-6 col-sm-6 '>
             <img src={FooterLogo} />
           </div>
           <div className='col-lg-2 col-md-4 col-6 col-sm-6 mt-3'>
@@ -73,7 +75,7 @@ const Footer = () => {
             </select>
           </div>
         </div>
-        <div className='row'>
+        <div className='row' id='mobile-row2'>
           <div className='col'>
             <p>
               Uphold Europe Limited, Reg No. 09281410, Registered Office: Suite A, 6 Honduras Street, London, England, EC1Y 0TH

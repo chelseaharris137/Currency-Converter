@@ -41,11 +41,11 @@ const Form = () => {
           <input
             type='text'
             className='form-control'
-            placeholder='0'
+            placeholder='Enter amount'
             aria-label='Enter amount'
             aria-describedby='button-addon2'
             onFocus={(e) => {
-              e.target.value = ''
+              e.target.placeholder = ''
             }}
             onChange={(e) => setAmount(Number(e.target.value))}
           />

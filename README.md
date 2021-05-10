@@ -45,7 +45,10 @@
 
 ## Usage
 
-[INSERT SCREENSHOT HERE]
+<p>Desktop demo:</p>
+<img src="readme-images/currency-converter-desktop.gif" alt="Logo" width="80" height="80">
+<p>Mobile demo:</p>
+<img src="readme-images/currency-converter-mobile.gif" alt="Logo" width="80" height="80">
 
 <!-- LICENSE -->
 
