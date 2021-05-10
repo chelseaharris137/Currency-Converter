@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../images/Uphold-logo.png'
 import '../Sass/Nav.sass'
 
 const Navigation = () => {
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true)
+
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed)
+
   return (
     <nav className='navbar navbar-expand-lg navbar-light' style={{ paddingLeft: '20px' }}>
       <a className='navbar-brand d-lg-none' href='#'>
@@ -16,10 +20,12 @@ const Navigation = () => {
         aria-controls='navbarToggle'
         aria-expanded='false'
         aria-label='Toggle navigation'
+        data-bs-toggle='collapse'
+        onClick={handleNavCollapse}
       >
         <span className='navbar-toggler-icon'></span>
       </button>
-      <div className='collapse navbar-collapse justify-content-between' id='navbarToggle'>
+      <div className={`${isNavCollapsed ? 'collapse ' : ''} navbar-collapse justify-content-between`} id='navbarToggle'>
         <ul className='navbar-nav'>
           <li className='nav-item'>
             <a className='nav-link' href='#'>
