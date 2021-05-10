@@ -46,9 +46,9 @@
 ## Usage
 
 <p>Desktop demo:</p>
-<img src="readme-images/currency-converter-desktop.gif" alt="Logo" width="80" height="80">
+<img src="readme-images/currency-converter-desktop.gif">
 <p>Mobile demo:</p>
-<img src="readme-images/currency-converter-mobile.gif" alt="Logo" width="80" height="80">
+<img src="readme-images/currency-converter-mobile.gif">
 
 <!-- LICENSE -->
 
