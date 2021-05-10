@@ -14,7 +14,13 @@ const Form = () => {
   const [selectedCurrency, setSelectedCurrency] = useState('USD')
   const [amount, setAmount] = useState(0)
   const [filteredResults, setFilteredResults] = useState()
-
+  const formValidation = (input) => {
+    if (isNaN(input.target.value)) {
+      alert('Please enter a number value')
+    } else {
+      setAmount(Number(input.target.value))
+    }
+  }
   useEffect(() => {
     sdk.getTicker(selectedCurrency).then((result) => {
       console.log(result)
@@ -47,7 +53,7 @@ const Form = () => {
             onFocus={(e) => {
               e.target.placeholder = ''
             }}
-            onChange={(e) => setAmount(Number(e.target.value))}
+            onChange={(e) => formValidation(e)}
           />
           <div className='input-group-append'>
             <select defaultValue={selectedCurrency} className='custom-select' onChange={(e) => setSelectedCurrency(e.target.value)}>
