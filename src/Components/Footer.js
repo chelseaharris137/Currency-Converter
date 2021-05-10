@@ -6,7 +6,7 @@ import '../Sass/Footer.sass'
 const Footer = () => {
   return (
     <footer>
-      <div className='container' fluid='md'>
+      <div className='container'>
         <div className='row mt-5'>
           <hr />
           <br />

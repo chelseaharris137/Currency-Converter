@@ -8,7 +8,6 @@ const Navigation = () => {
       <a className='navbar-brand d-lg-none' href='#'>
         <img src={Logo} />
       </a>
-
       <button
         className='navbar-toggler'
         type='button'
@@ -20,7 +19,6 @@ const Navigation = () => {
       >
         <span className='navbar-toggler-icon'></span>
       </button>
-
       <div className='collapse navbar-collapse justify-content-between' id='navbarToggle'>
         <ul className='navbar-nav'>
           <li className='nav-item'>
@@ -39,16 +37,10 @@ const Navigation = () => {
             </a>
           </li>
         </ul>
-
-        <a className='navbar-brand d-none d-lg-block' href='#'>
-          <img src={Logo} />
+        <a className='navbar-brand d-none d-lg-block ' href='#'>
+          <img src={Logo} style={{ paddingRight: '180px' }} />
         </a>
-
         <ul className='navbar-nav'>
-          <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-          <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-          <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-          <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
           <li className='nav-item'>
             <button id='login-btn'>Log In</button>
           </li>

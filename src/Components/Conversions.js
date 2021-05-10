@@ -6,9 +6,9 @@ const Conversions = ({ filteredResults, amount }) => {
     <div>
       {filteredResults
         ? filteredResults.map((obj, idx) => (
-            <div className='row mt-3' id='main-content-wrapper' key={idx}>
-              <div className='col text-left'>{(1 / Number(obj.rate)) * amount}</div>
-              <div className='col text-left'>{obj.to}</div>
+            <div className='row  justify-content-center mt-3' key={idx}>
+              <div className='col-lg-3 col-md-4 col-6 col-sm-5 text-left'>{(1 / Number(obj.rate)) * amount}</div>
+              <div className='col-lg-3 col-md-4 col-6 col-sm-5 text-left'>{obj.to}</div>
             </div>
           ))
         : 'hello'}

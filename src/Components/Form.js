@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Conversions from './Conversions'
-import '../Sass/Form.sass'
 import SDK from '@uphold/uphold-sdk-javascript'
+import '../Sass/Form.sass'
 
 const sdk = new SDK({
   baseUrl: 'http://api-sandbox.uphold.com',
@@ -25,7 +25,8 @@ const Form = () => {
           let withDash = currencyOptions[i] + '-' + selectedCurrency
           let withoutDash = currencyOptions[i] + selectedCurrency
           if (pair == withDash || pair == withoutDash) {
-            filtered.push({ from: selectedCurrency, to: currencyOptions[i], rate: obj.ask })
+            const rate = (Number(obj.bid) + Number(obj.ask)) / 2
+            filtered.push({ from: selectedCurrency, to: currencyOptions[i], rate: rate })
           }
         }
       })
